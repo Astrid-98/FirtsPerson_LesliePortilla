@@ -544,8 +544,8 @@ GameObject:
   - component: {fileID: 1407141551}
   - component: {fileID: 1407141550}
   - component: {fileID: 1407141549}
-  - component: {fileID: 1407141553}
   - component: {fileID: 1407141552}
+  - component: {fileID: 1407141553}
   m_Layer: 0
   m_Name: PlayerCapsule
   m_TagString: Untagged
