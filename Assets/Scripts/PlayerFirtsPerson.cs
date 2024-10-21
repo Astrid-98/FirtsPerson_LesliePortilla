@@ -29,7 +29,7 @@ public class PlayerFirtsPerson : MonoBehaviour
         //Atan2 es arcotangente
         float anguloRotacion = Mathf.Atan2(movimiento.x, movimiento.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y; //Alineandome al angulo de la camara = Angulo al que Yo voy a rotar mi cuerpo dependiendo de a donde  mire.
         
-        if(movimiento.magnitude > 0)
+        if(movimiento.magnitude > 0) // Si el jugador ha tocado teclas, si hay magnitud en el input y es positiva
         {
             //Mi cuerpo queda orientado hacia donde me muevo
             transform.eulerAngles = new Vector3(0, anguloRotacion, 0);
@@ -37,7 +37,6 @@ public class PlayerFirtsPerson : MonoBehaviour
             //me muevo hacia donde estoy orientado
             controller.Move(movimiento * velocidadMovimiento * Time.deltaTime); //con Time.deltaTime time porque esto no va por fisicas.
         }
-        
-
+      
     }
 }
