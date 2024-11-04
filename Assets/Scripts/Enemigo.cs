@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,10 +23,42 @@ public class Enemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //agent.SetDestination(player.gameObject.transform.position);
-        if (agent.remainingDistance <= agent.stoppingDistance) 
+        Perseguir();
+        if (ventanaAbierta) 
         {
-        
+            DetectarImpacto();
         }
     }
+
+    private void DetectarImpacto()
+    {
+       
+    }
+
+    private void Perseguir()
+    {
+        //agent.SetDestination(player.gameObject.transform.position);
+
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+
+            //Lanzar la animacion de ataque
+            agent.isStopped = true; // Me paro.
+            anim.SetBool("attacking", true); // Lanzo el ataque.
+        }
+    }
+    private void AbrirVentanaAtaque()
+    {
+        ventanaAbierta = true;
+    }
+    private void CerrarVentanaAtaque()
+    {
+        ventanaAbierta = false;
+    }
+    private void FinAtaque()
+    {
+        agent.isStopped = true; // Me paro.
+        anim.SetBool("attacking", true); // Lanzo el ataque.
+    }
+    
 }
