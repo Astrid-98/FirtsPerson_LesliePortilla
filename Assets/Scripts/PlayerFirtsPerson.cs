@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerFirtsPerson : MonoBehaviour
 {
     [SerializeField] private float velocidadMovimiento;
+    [SerializeField] private float smoothTime;
     CharacterController controller;
+
+    private float velocidadRotacion;
     
 
     // Start is called before the first frame update
